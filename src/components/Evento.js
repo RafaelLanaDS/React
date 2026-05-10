@@ -1,26 +1,3 @@
-import Button from "./eventos/Button"
-
-
-function Evento(){
-    function MeuEvento(){
-        console.log('ativando meu primeiro evento')
-    }
-    function segundoEvento(){
-        console.log('ativando meu segundo evento')
-    }
-    return(
-        <>
-            <Button event={MeuEvento} text="primeiro evento"/>
-            <Button event={segundoEvento} text="segundo evento"/>
-        </>
-    )
-}
-
-export default Evento
-
-
-eventos 
-
 function Form(){
     function cadastrarUsuario(e){
         e.preventDefault()
@@ -44,3 +21,16 @@ function Form(){
 
 export default Form
 
+function Evento(){
+    function MeuEvento(){
+        console.log('Fui ativado')
+    }
+    return(
+        <>
+            <p>Clique de desporar evento</p>
+            <button  onClick={MeuEvento}>ativar</button>
+        </>
+    )
+}
+
+export default Evento

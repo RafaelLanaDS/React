@@ -6,7 +6,7 @@ function Condicional(){
 
     function enviarEmail(e){
         e.preventDefault()
-        console.log(`email enviado ${email}`)//MOSTRANDO O VALOR DO ESTADO NO CONSOLE
+        console.log(`email enviado do usuario ${email}`)//MOSTRANDO O VALOR DO ESTADO NO CONSOLE
         setUserEmail(email) //ATUALIZANDO O ESTADO DO NOME DO USUÁRIO COM O VALOR DO EMAIL
     }
 
@@ -16,25 +16,29 @@ function Condicional(){
 
     return(
         <>
-        <h2>cadastre seu emil</h2>
-        <form>
-            <input type="email" 
-            id="email" 
-            name="email" 
-            placeholder="Digite seu email"
-            onChange={(e) => setEmail(e.target.value)}/>{/* Pega o valor do input */}
+            <h2>cadastre seu emil</h2>
+            <form>
+                <input type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Digite seu email"
+                onChange={(e) => setEmail(e.target.value)}/>{/* Pega o valor do input */}
 
 
-            <button type="submit" onClick={enviarEmail}>Eviar-email</button> 
-            {userEmail && ( //SE O ESTADO DO NOME DO USUÁRIO FOR VERDADEIRO, MOSTRA A MENSAGEM DE SUCESSO
-                <div>
-                    <p>O email do usuário é: {userEmail}</p>
-                    <button onClick={limparEmail}>Limpar</button>
-                </div>
-            )}
-        </form>
+                <button type="submit" onClick={enviarEmail}>Eviar-email</button> 
+                {userEmail && ( //SE O ESTADO DO NOME DO USUÁRIO FOR VERDADEIRO, MOSTRA A MENSAGEM DE SUCESSO
+                    <div>
+                        <p>O email do usuário é: {userEmail}</p>
+                        <button onClick={limparEmail}>Limpar</button>
+                    </div>
+                )}
+            </form>
         </>
     )
 }
 
 export default Condicional
+
+//console.log(e) mostra tudo sobre o evento
+//console.log(e.target) o elemento HTML que disparou
+//console.log(e.target.value) o valor digitado no input
