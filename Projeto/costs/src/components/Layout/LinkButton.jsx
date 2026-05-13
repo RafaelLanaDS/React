@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom'
 import styles from './LinkButton.module.css'
 
 function LinkButton({to, text}){ 
     return(
-        <Link to={to} className={styles.btn}>
+        <Link className={styles.btn} to={to} >
             {text}
         </Link>
     )
@@ -11,4 +12,6 @@ function LinkButton({to, text}){
 export default LinkButton
 
 
-// function LinkButton({to, text}) to e text são as props que serão passadas para o componente LinkButton, onde to é a rota para a qual o botão irá redirecionar e text é o texto que será exibido no botão. O componente Link é importado do react-router-dom e é usado para criar um link de navegação. A classe CSS btn é aplicada ao Link para estilizar o botão.
+// function LinkButton({to, text}) to -> indica onde o botão deve redirecionar, text -> indica o texto que deve aparecer no botão
+// Link -> é um componente do react-router-dom que permite criar links de navegação entre as páginas do aplicativo
+// className={styles.btn} -> aplica a classe 
