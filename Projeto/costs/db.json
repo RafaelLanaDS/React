@@ -1,22 +1,67 @@
 {
-    "projects": [],
-    "categories": [
-        {
-            "id": 1,
-            "name": "Infra"
-        },
-        {
-            "id": 2,
-            "name": "Desenvolvimento"
-        },
-        {
-            "id": 3,
-            "name": "Disign"
-        },
-        {
-            "id": 4,
-            "name": "Planejamento"
-        }
-        
-     ]
+  "projects": [
+    {
+      "name": "teste",
+      "budget": "20000",
+      "category": {
+        "id": "3",
+        "name": "Disign"
+      },
+      "cost": 0,
+      "services": [],
+      "id": "5i_tWVvfdBA"
+    },
+    {
+      "name": "teste",
+      "budget": "20000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": "3zXyP05CMsc"
+    },
+    {
+      "name": "teste",
+      "budget": "20000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": "smSlvZh9qI8"
+    },
+    {
+      "name": "projeto teste",
+      "budget": "20000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": "YQw6B2bLj7M"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Infra"
+    },
+    {
+      "id": "2",
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": "3",
+      "name": "Disign"
+    },
+    {
+      "id": "4",
+      "name": "Planejamento"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
