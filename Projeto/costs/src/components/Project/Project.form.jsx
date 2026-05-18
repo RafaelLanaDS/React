@@ -1,6 +1,5 @@
 import { useEffect, useState} from 'react'
 
-
 import Imput from '../form/Imput'
 import Select from '../form/Select'
 import SubmitButton from '../form/SubimitButton'
@@ -13,17 +12,17 @@ function ProjectForm({btnText}){
 
     useEffect(() => {
         fetch('http://localhost:5000/categories',{
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then((resp) => resp.json())
-    .then((data) => {
-        setCategories(data);
-    })
-    .catch.log((error) => console.log(error))
-    },[])
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+            .then((resp) => resp.json())
+            .then((data) => {
+                setCategories(data)
+            })
+        .catch((err) => console.log(err))
+    }, [])
 
 
     return(
@@ -42,10 +41,12 @@ function ProjectForm({btnText}){
             placeholder='Insira o orçamento do projeto'
             />
 
+            
             <Select
-            name='category_id'  
-            text='Selecione a categorioa'
-            options={categories}/>
+                name='category_id'
+                text='Selecione a categoria'
+                options={categories}   // ← com S
+            />
 
             <SubmitButton 
             text={btnText}/>
