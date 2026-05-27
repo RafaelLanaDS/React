@@ -1,10 +1,21 @@
 
 
 const Events = () => {
-    const exenploDeEvento = (e) => { {/* (e) usado para acessar o evento */ }
+    const exenploDeEvento = (e) => {        
+    {/* (e) usado para acessar o evento */ }
         console.log(e);
         console.log("ativou o evento")
     };
+
+    const renderSomething = (x) => {
+
+        if(x){
+            return <h1>Renderizar isso</h1>
+        } else {
+            return <h1>Tambem Renderizar isto</h1>
+        }
+
+    }
 
     return (
         <>
@@ -21,6 +32,8 @@ const Events = () => {
                     }
                 }}>Outro tipo</button>
             </div>
+            {renderSomething(true)}
+            {renderSomething(false)}
         </>
     )
 }
