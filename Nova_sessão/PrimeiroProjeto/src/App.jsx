@@ -3,9 +3,9 @@ import './App.css'
 
 
 import City from './assets/city.jpg'
+import ManageData from './componentes/ManageData'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div>
@@ -18,6 +18,7 @@ function App() {
         {/* imagem em assets */}
         <img src={City} alt="cidade" />
       </div>
+      <ManageData />
     </div>
   )
 }
