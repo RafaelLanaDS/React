@@ -11,7 +11,7 @@ const ListRender = () => {
         { id: 3, name: "Maria", idade: 13}
     ]);
 
-    const deleteRandom = () => {
+    const deleteRandom = () => { //fundao de deletar usser
         const randomNumber = Math.floor(Math.random() * 4);
 
         // setUsers        → vai atualizar a lista de usuários
