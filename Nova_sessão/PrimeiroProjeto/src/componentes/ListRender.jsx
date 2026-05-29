@@ -14,9 +14,10 @@ const ListRender = () => {
     const deleteRandom = () => {
         const randomNumber = Math.floor(Math.random() * 4);
 
-        // Previous State → pega o valor ATUAL da lista antes de modificar
-        // prevUsers = estado anterior completo
-        // .filter() → retorna todos EXCETO o que tem o id sorteado
+        // setUsers        → vai atualizar a lista de usuários
+        // prevUsers       → pega a lista ATUAL antes de mudar
+        // .filter()       → percorre cada usuário da lista
+        // randomNumber !== user.id → "o id do usuário é DIFERENTE do número sorteado?"
         setUsers((prevUsers) => {
             return prevUsers.filter((user) => randomNumber !== user.id)
         });
