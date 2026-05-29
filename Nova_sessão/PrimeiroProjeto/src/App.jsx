@@ -5,6 +5,8 @@ import './App.css'
 import City from './assets/city.jpg'
 import ManageData from './componentes/ManageData'
 import ListRender from './componentes/ListRender'
+import CondicionalRender from './componentes/CondicionalRender'
+import CondicaoTernario from './componentes/CondicaoTernario'
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
       </div>
       <ManageData />
       <ListRender />
+      <CondicionalRender />
+      <CondicaoTernario />
     </div>
   )
 }

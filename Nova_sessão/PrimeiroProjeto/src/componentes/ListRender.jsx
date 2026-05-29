@@ -18,6 +18,9 @@ const ListRender = () => {
         // prevUsers       → pega a lista ATUAL antes de mudar
         // .filter()       → percorre cada usuário da lista
         // randomNumber !== user.id → "o id do usuário é DIFERENTE do número sorteado?"
+        //    é só um parâmetro como qualquer outro!
+        //poderia chamar de qualquer nome:
+        //(prev), (listaAtual), (x) → funciona igual!
         setUsers((prevUsers) => {
             return prevUsers.filter((user) => randomNumber !== user.id)
         });
