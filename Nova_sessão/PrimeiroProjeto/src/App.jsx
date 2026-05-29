@@ -7,6 +7,7 @@ import ManageData from './componentes/ManageData'
 import ListRender from './componentes/ListRender'
 import CondicionalRender from './componentes/CondicionalRender'
 import CondicaoTernario from './componentes/CondicaoTernario'
+import ShowUserName from './componentes/ShowUserName'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
       <ListRender />
       <CondicionalRender />
       <CondicaoTernario />
+      <ShowUserName name="Rafael"/>
     </div>
   )
 }
