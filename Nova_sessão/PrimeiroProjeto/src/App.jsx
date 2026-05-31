@@ -13,7 +13,8 @@ import CarDetails from './componentes/CarDetails'
 function App() {
 
   const cars = [
-    {id: 1, marca: "Ferrari", cor: "Azul", Km: 1000, NewCar: true}
+    {id: 1, marca: "Ferrari", cor: "Azul", Km: 0, NewCar: true},
+    {id: 2, marca: "Mustang", cor: "Preto", Km: 5000, NewCar: false}
   ]
 
   return (
