@@ -9,6 +9,8 @@ import CondicionalRender from './componentes/CondicionalRender'
 import CondicaoTernario from './componentes/CondicaoTernario'
 import ShowUserName from './componentes/ShowUserName'
 import CarDetails from './componentes/CarDetails'
+import Container from './componentes/Container'
+import ExecuteFunction from './componentes/ExecuteFunction'
 
 function App() {
 
@@ -16,6 +18,10 @@ function App() {
     {id: 1, marca: "Ferrari", cor: "Azul", Km: 0, NewCar: true},
     {id: 2, marca: "Mustang", cor: "Preto", Km: 5000, NewCar: false}
   ]
+
+  function ShowMessage(){
+    console.log("Evento do componente pai!");
+  }
 
   return (
     <div>
@@ -47,6 +53,7 @@ function App() {
       {/* Loop em array de objetos  */}
       {cars.map((car) => (
         <CarDetails 
+        key={car.id}
           marca={car.marca}
           cor={car.cor}
           Km={car.Km}
@@ -54,7 +61,13 @@ function App() {
         />
       ))}
 
+      {/* Children */}
+      <Container>
+          <p>esse é o conteudo</p>
+      </Container>
 
+      {/* executar função */}
+      <ExecuteFunction MyFunction={ShowMessage} />
     </div>
   )
 }
