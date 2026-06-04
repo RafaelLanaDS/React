@@ -11,6 +11,9 @@ import ShowUserName from './componentes/ShowUserName'
 import CarDetails from './componentes/CarDetails'
 import Container from './componentes/Container'
 import ExecuteFunction from './componentes/ExecuteFunction'
+import Message from './componentes/Message'
+import ChangeMessage from './componentes/ChangeMessage'
+import UserDetails from './componentes/UserDetails'
 
 function App() {
 
@@ -21,6 +24,13 @@ function App() {
 
   function ShowMessage(){
     console.log("Evento do componente pai!");
+  }
+
+  {/* state lift */}
+  // PAI → guarda o state e passa funções/valores para os filhos
+  const [message, setMessage] = useState("")
+  const hanleMessage = (msg) => {
+    setMessage(msg)
   }
 
   return (
@@ -68,6 +78,14 @@ function App() {
 
       {/* executar função */}
       <ExecuteFunction MyFunction={ShowMessage} />
+
+      {/* state lift */}
+      <Message msg={message}/> {/* ← filho que EXIBE */}
+      <ChangeMessage hanleMessage={hanleMessage}/>{/*  ← filho que ALTERA */}
+
+
+      {/* Dessafio */}
+      <UserDetails />
     </div>
   )
 }
