@@ -15,6 +15,7 @@ import Message from './componentes/Message'
 import ChangeMessage from './componentes/ChangeMessage'
 import UserDetails from './componentes/UserDetails'
 
+
 function App() {
 
   const cars = [
@@ -32,6 +33,14 @@ function App() {
   const hanleMessage = (msg) => {
     setMessage(msg)
   }
+
+  {/* Desafio */}
+  const users = [
+      {id: 1, Nome: "Rafael", Idade:23 , Profissão: "Programador"},
+      {id: 2, Nome: "Lucas", Idade:12 , Profissão: "estagiario"},
+      {id: 3, Nome: "Will", Idade:30 , Profissão: "Gerente"}
+  ];
+
 
   return (
     <div>
@@ -85,7 +94,14 @@ function App() {
 
 
       {/* Dessafio */}
-      <UserDetails />
+      {users.map((pessoas) =>(
+        <UserDetails key={pessoas.id}
+          Nome={pessoas.Nome}
+          Idade={pessoas.Idade}
+          Profissao={pessoas.Profissão}
+        />
+      ))}
+      
     </div>
   )
 }
