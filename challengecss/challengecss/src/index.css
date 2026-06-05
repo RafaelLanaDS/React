@@ -1,0 +1,11 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: gray;
+  border-bottom: 2px solid gray;
+}
