@@ -101,18 +101,27 @@ const Myforms = ({user}) => {
 export default Myforms
 
 // ─────────────────────────────────────────
-// RESUMO
+// NOVO - CONTROLLED INPUTS COM DADOS DO BACKEND
 // ─────────────────────────────────────────
-// onChange          → dispara a cada letra digitada no input
-//                    usa e.target.value para pegar o valor atual
+// user ? user.name : ''
+// → se vier um usuário do backend, preenche o input com o dado dele
+// → se não vier, começa vazio ''
+// → muito útil em formulários de EDIÇÃO!
 //
-// onSubmit          → dispara quando o formulário é enviado
-//                    sempre usar com preventDefault!
+// Exemplo:
+// useState(user ? user.name : '')
+//           ↑         ↑        ↑
+//      tem user?  usa o nome  senão vazio
 //
-// preventDefault()  → cancela o comportamento padrão do form
-//                    sem ele a página recarrega e perde os dados
+// ─────────────────────────────────────────
+// RESUMO GERAL DO FORMULÁRIO
+// ─────────────────────────────────────────
+// Controlled Input → value={state}            → espelha o state no input
+// Limpar form      → setState('')             → limpa após envio
+// Textarea         → value + onChange         → igual ao input
+// Select           → value + onChange         → captura opção escolhida
+// Props com user   → user ? user.dado : ''    → preenche se vier do backend
 //
-// Forma separada  → const handleName = (e) => setName(e.target.value)
-// Forma inline    → onChange={(e) => setEmail(e.target.value)}
-// Resultado final → os dois fazem a mesma coisa! ✅
+// Todos os inputs seguem o mesmo padrão:
+// value={state} + onChange={(e) => setState(e.target.value)} ✅
 // ─────────────────────────────────────────
