@@ -8,6 +8,7 @@ const Game = ({verifyLatter, pickedWord,pickedCategory,letters,guessedLetters,wr
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    console.log('📤 Letra enviada:', letter)
     verifyLatter(letter)
 
     setLetter("");
@@ -39,7 +40,12 @@ const Game = ({verifyLatter, pickedWord,pickedCategory,letters,guessedLetters,wr
       </div>
       <div className="wrongLettersContainer">
         <p>Letras ja utilizadas:</p>
-        {wrongLetters.map((letters, i) => (<span key={i}>{letters}</span>))}
+        {console.log('🔤 wrongLetters recebido no Game:', wrongLetters)}
+        {wrongLetters.length > 0 ? (
+          wrongLetters.map((letters, i) => (<span key={i}>{letters}</span>))
+        ) : (
+          <p style={{color: '#bdc3c7', marginTop: '10px'}}>Nenhuma letra errada ainda</p>
+        )}
       </div>
     </div>
   )

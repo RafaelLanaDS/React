@@ -75,15 +75,20 @@ function App() {
       return
     }
 
+    console.log('Letra entrada:', normalizedLetter)
+    console.log('Letras da palavra:', letters)
+    console.log('Contém a letra?', letters.includes(normalizedLetter))
+
     if(letters.includes(normalizedLetter)){
+      console.log('Letra correta adicionada')
       setGuessedLetters((actualGuessedLetters) => [
         ...actualGuessedLetters, normalizedLetter
       ])
     } else {
+      console.log('Letra errada adicionada:', normalizedLetter)
       setWrongLetters((actualWrongLetters) => [
         ...actualWrongLetters, normalizedLetter
       ]);
-
 
       setGuesses((actualGuesses) => actualGuesses - 1)
     }
@@ -95,12 +100,10 @@ function App() {
   }
 
   useEffect(()=>{
-    clearLetterStates()
-
     if(guesses <= 0){
        setGameStage(stages[2].name)
     }
-  }, [guesses])
+  }, [guesses, setGameStage, stages])
 
   useEffect(() =>{
     const uniqueLetters = [...new Set(letters)]
@@ -111,6 +114,14 @@ function App() {
     }
 
   }, [guessedLetters, letters, startGame])
+
+  // DEBUG
+  useEffect(() => {
+    console.log('🎮 Estado do jogo atualizado:')
+    console.log('📝 wrongLetters:', wrongLetters)
+    console.log('✅ guessedLetters:', guessedLetters)
+    console.log('🎯 letters da palavra:', letters)
+  }, [wrongLetters, guessedLetters, letters])
 
   //restarts the game
   const retry = () => {
