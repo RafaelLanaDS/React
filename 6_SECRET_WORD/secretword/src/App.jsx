@@ -47,7 +47,7 @@ function App() {
   //start the secret word game 
   const startGame = useCallback(() => {
     //clear all latter
-    clearLetterStates
+    clearLetterStates()
 
     // pick word and pick category
     const {word, category} = pickWordAndCategory()
@@ -110,7 +110,7 @@ function App() {
     const uniqueLetters = [...new Set(letters)]
 
     if(guessedLetters.length === uniqueLetters.length){
-      setScore((actualScore) => actualScore + 100)
+      setScore((actualScore) => actualScore += 100)
       startGame()
     }
     console.log(uniqueLetters)
