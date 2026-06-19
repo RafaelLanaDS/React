@@ -35,11 +35,9 @@ function App() {
     //pick a random category
     const categories = Object.keys(words)
     const category = categories[Math.floor(Math.random() * Object.keys(categories).length)]
-    console.log(category)
 
     //pick a random word
     const word = words[category][Math.floor(Math.random() * words[category].length)]
-    console.log(word)
 
     return {word, category}
   },[words])
@@ -57,8 +55,6 @@ function App() {
 
     wordLetters = wordLetters.map((l) => l.toLowerCase())
 
-    console.log(word, category)
-    console.log(wordLetters)
 
     //fill states
     setPickeWord(word)
@@ -113,7 +109,7 @@ function App() {
       setScore((actualScore) => actualScore += 100)
       startGame()
     }
-    console.log(uniqueLetters)
+
   }, [guessedLetters, letters, startGame])
 
   //restarts the game
