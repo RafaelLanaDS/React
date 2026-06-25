@@ -33,13 +33,21 @@ function App() {
       price,
     }
 
-    const res = await fetch(url, {
+    const res = await fetch(url, { //requisição POST para adicionar produto
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(product),
     })
+
+    // 3 - carregamento dinamico de produtos
+    const addedProduct = await res.json()
+    setProducts((prevProducts) => [...prevProducts, addedProduct])
+
+    //limpando os campos do formulário
+    setName('')
+    setPrice('')
   }
 
   return (
@@ -50,7 +58,7 @@ function App() {
           <li key={product.id}>{product.name} - R$ {parseFloat(product.price).toFixed(2)}</li>
         ))}
       </ul>
-
+        <hr/>
       <div className="add-product">
         <form onSubmit={handleSubmit}>
           <label>
