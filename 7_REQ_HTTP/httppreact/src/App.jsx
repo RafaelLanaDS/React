@@ -26,7 +26,20 @@ function App() {
 
   // 2 - adicionando produtos ao banco de dados
   const handleSubmit = async (e) => {
+    e.preventDefault()
 
+    const product = {
+      name,
+      price,
+    }
+
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(product),
+    })
   }
 
   return (
@@ -34,7 +47,7 @@ function App() {
       <h1>Listagem de Produtos</h1>
       <ul>
         {products.map((product) => (
-          <li key={product.id}>{product.name} - R$ {product.price.toFixed(2)}</li>
+          <li key={product.id}>{product.name} - R$ {parseFloat(product.price).toFixed(2)}</li>
         ))}
       </ul>
 
@@ -48,7 +61,7 @@ function App() {
             Preço:
             <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
           </label>
-          <input type="submit" value="Adicionar Produto" />
+          <input type="submit" value="Adicionar Produto" className="button" />
         </form>
       </div>
     </div>

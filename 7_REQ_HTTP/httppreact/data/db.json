@@ -1,54 +1,65 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "name": "Camisa Polo",
-            "price": 10.99
-        },
-        {
-            "id": 2,
-            "name": "Calça Jeans",
-            "price": 19.99
-        },
-        {
-            "id": 3,
-            "name": "Bermuda",
-            "price": 15.99
-        },
-        {
-            "id": 4,
-            "name": "Tênis",
-            "price": 29.99
-        },
-        {
-            "id": 5,
-            "name": "Jaqueta",
-            "price": 49.99
-        },
-        {
-            "id": 6,
-            "name": "Camiseta",
-            "price": 9.99
-        },
-        {
-            "id": 7,
-            "name": "Shorts",
-            "price": 12.99
-        },
-        {
-            "id": 8,
-            "name": "Blusa de Frio",
-            "price": 39.99
-        },
-        {
-            "id": 9,
-            "name": "Chinelo",
-            "price": 5.99
-        },
-        {
-            "id": 10,
-            "name": "Meias",
-            "price": 3.99
-        }
-    ]
+  "products": [
+    {
+      "id": "1",
+      "name": "Camisa Polo",
+      "price": 10.99
+    },
+    {
+      "id": "2",
+      "name": "Calça Jeans",
+      "price": 19.99
+    },
+    {
+      "id": "3",
+      "name": "Bermuda",
+      "price": 15.99
+    },
+    {
+      "id": "4",
+      "name": "Tênis",
+      "price": 29.99
+    },
+    {
+      "id": "5",
+      "name": "Jaqueta",
+      "price": 49.99
+    },
+    {
+      "id": "6",
+      "name": "Camiseta",
+      "price": 9.99
+    },
+    {
+      "id": "7",
+      "name": "Shorts",
+      "price": 12.99
+    },
+    {
+      "id": "8",
+      "name": "Blusa de Frio",
+      "price": 39.99
+    },
+    {
+      "id": "9",
+      "name": "Chinelo",
+      "price": 5.99
+    },
+    {
+      "id": "10",
+      "name": "Meias",
+      "price": 3.99
+    },
+    {
+      "name": "controle",
+      "price": "55",
+      "id": "pxXMdCyiURY"
+    },
+    {
+      "name": "controle",
+      "price": "55",
+      "id": "TfgDRAe3kbo"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
