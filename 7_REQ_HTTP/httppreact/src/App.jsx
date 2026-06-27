@@ -3,7 +3,10 @@ import './App.css'
 
 import {useState, useEffect} from 'react'
 
-const url = 'http://localhost:3000/products' // 2 - endpoint da API 
+// 4 - custom hook
+import {useFetch} from './hooks/useFetch'
+
+const url = 'http://localhost:3000/products' //pegando a url do json-server e salvando em uma constante
 
 function App() {
 
@@ -11,15 +14,20 @@ function App() {
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
 
-  // 1 - resgatando dados da API
-  useEffect(() => {
-    async function fetchProducts() {
-      const res = await fetch(url)   // busca os dados (espera a resposta)
-      const data = await res.json()  // converte resposta pra objeto JS
-      setProducts(data)              // salva no estado
-    }
-    fetchProducts()
-  }, []) // [] = executa só uma vez, quando o componente carrega
+  // 4 - custom hook
+  const {data: items} = useFetch(url) //desestruturando o objeto retornado pelo hook e renomeando a propriedade data para items
+
+  console.log(items)
+
+  // // 1 - resgatando dados da API
+  // useEffect(() => {
+  //   async function fetchProducts() {
+  //     const res = await fetch(url)   // busca os dados (espera a resposta)
+  //     const data = await res.json()  // converte resposta pra objeto JS
+  //     setProducts(data)              // salva no estado
+  //   }
+  //   fetchProducts()
+  // }, []) // [] = executa só uma vez, quando o componente carrega
 
   // 2 - adicionando produtos ao banco de dados
   const handleSubmit = async (e) => {
@@ -51,11 +59,13 @@ function App() {
     <div className="App">
       <h1>Listagem de Produtos</h1>
       <ul>
-        {products.map((product) => (
+        {items && items.map((product) => (
           <li key={product.id}>{product.name} - R$ {parseFloat(product.price).toFixed(2)}</li>
         ))}
       </ul>
-        <hr/>
+
+      <hr/>
+
       <div className="add-product">
         <form onSubmit={handleSubmit}>
           <label>
@@ -65,6 +75,7 @@ function App() {
               value={name} 
               onChange={(e) => 
               setName(e.target.value)} 
+              placeholder="Digite o nome do produto"
             />
           </label>
           <label>
@@ -74,6 +85,7 @@ function App() {
               value={price} 
               onChange={(e) => 
               setPrice(e.target.value)} 
+              placeholder="Digite o preço do produto"
             />
           </label>
           <input 
