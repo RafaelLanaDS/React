@@ -19,61 +19,6 @@
       "id": "4",
       "name": "Tênis",
       "price": 29.99
-    },
-    {
-      "id": "5",
-      "name": "Jaqueta",
-      "price": 49.99
-    },
-    {
-      "id": "6",
-      "name": "Camiseta",
-      "price": 9.99
-    },
-    {
-      "id": "7",
-      "name": "Shorts",
-      "price": 12.99
-    },
-    {
-      "id": "8",
-      "name": "Blusa de Frio",
-      "price": 39.99
-    },
-    {
-      "id": "9",
-      "name": "Chinelo",
-      "price": 5.99
-    },
-    {
-      "id": "10",
-      "name": "Meias",
-      "price": 3.99
-    },
-    {
-      "name": "controle",
-      "price": "55",
-      "id": "pxXMdCyiURY"
-    },
-    {
-      "name": "bicicleta ",
-      "price": "2500",
-      "id": "NcDmbQbZsMI"
-    },
-    {
-      "name": "Plasystation",
-      "price": "3600",
-      "id": "46e_7GqChEU"
-    },
-    {
-      "name": "teclado",
-      "price": "110",
-      "id": "lBGZuLeHdFI"
-    },
-    {
-      "name": "banco",
-      "price": "258",
-      "id": "4vWzwiE8dGs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
