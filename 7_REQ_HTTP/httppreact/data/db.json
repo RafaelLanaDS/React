@@ -1,24 +1,9 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Camisa Polo",
-      "price": 10.99
-    },
-    {
-      "id": "2",
-      "name": "Calça Jeans",
-      "price": 19.99
-    },
-    {
-      "id": "3",
-      "name": "Bermuda",
-      "price": 15.99
-    },
-    {
-      "id": "4",
-      "name": "Tênis",
-      "price": 29.99
+      "name": "celular ",
+      "price": "1500",
+      "id": "afa_MOwOUVs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

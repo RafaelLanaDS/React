@@ -14,8 +14,11 @@ function App() {
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
 
+  
+
+
   // 4 - custom hook
-  const {data: items} = useFetch(url) //desestruturando o objeto retornado pelo hook e renomeando a propriedade data para items
+  const {data: items, httpConfig, loading, error} = useFetch(url) //desestruturando o objeto retornado pelo hook e renomeando a propriedade data para items
 
   console.log(items)
 
@@ -38,31 +41,46 @@ function App() {
       price,
     }
 
-    const res = await fetch(url, { //requisição POST para adicionar produto
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json', // avisa que vem JSON
-      },
-      body: JSON.stringify(product), // converte objeto JS pra texto JSON
-    })
+    // const res = await fetch(url, { //requisição POST para adicionar produto
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json', // avisa que vem JSON
+    //   },
+    //   body: JSON.stringify(product), // converte objeto JS pra texto JSON
+    // })
 
-    // 3 - carregamento dinamico de produtos
-    const addedProduct = await res.json()
-    setProducts((prevProducts) => [...prevProducts, addedProduct])
+    // // 3 - carregamento dinamico de produtos
+    // const addedProduct = await res.json()
+    // setProducts((prevProducts) => [...prevProducts, addedProduct])
 
-    //limpando os campos do formulário
+    // //limpando os campos do formulário
+
+    // 5 - refatorando post
+    httpConfig(product, 'POST')
     setName('')
     setPrice('')
+  }
+
+  // 8 - desafio 6
+  const handleDelete = (id) => {
+    httpConfig(id, 'DELETE')
   }
 
   return (
     <div className="App">
       <h1>Listagem de Produtos</h1>
-      <ul>
-        {items && items.map((product) => (
-          <li key={product.id}>{product.name} - R$ {parseFloat(product.price).toFixed(2)}</li>
-        ))}
-      </ul>
+      {/* 6 - loading */}
+      {loading && <p>Carregando produtos...</p>}
+      {error && <p>{error}</p>}
+      {!loading && items && (
+        <ul>
+          {items.map((product) => (
+            <li key={product.id}>{product.name} - R$ {parseFloat(product.price).toFixed(2)}
+              <button onClick={() => handleDelete(product.id)}>Excluir</button>
+            </li>
+          ))}
+        </ul>
+      )}
 
       <hr/>
 
@@ -88,11 +106,9 @@ function App() {
               placeholder="Digite o preço do produto"
             />
           </label>
-          <input 
-            type="submit" 
-            value="Adicionar Produto" 
-            className="button" 
-          />
+          {/* 7 - state de loading no post */}
+          {loading && <input type="submit" value="Aguarde..." disabled className="button" />}
+          {!loading && <input type="submit" value="Adicionar Produto" className="button" />}
         </form>
       </div>
     </div>
