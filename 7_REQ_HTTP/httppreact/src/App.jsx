@@ -14,9 +14,6 @@ function App() {
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
 
-  
-
-
   // 4 - custom hook
   const {data: items, httpConfig, loading, error} = useFetch(url) //desestruturando o objeto retornado pelo hook e renomeando a propriedade data para items
 
@@ -42,7 +39,7 @@ function App() {
     }
 
     // const res = await fetch(url, { //requisição POST para adicionar produto
-    //   method: 'POST',
+    //   method: 'POST', // o metodo post é usado para enviar dados para o servidor e o get é usado para buscar dados do servidor
     //   headers: {
     //     'Content-Type': 'application/json', // avisa que vem JSON
     //   },
