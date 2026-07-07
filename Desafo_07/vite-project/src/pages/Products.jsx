@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import {useFetch} from '../hooks/useFetch'
+import {Link} from 'react-router-dom'
 
 const Products = () => {
   // 4 - rota dinâmica
@@ -15,10 +16,14 @@ const Products = () => {
       <p>ID do Produto: {id}</p>
       {error && <p>Erro: {error}</p>}
       {loading && <p>Carregando...</p>}
-      {product && (
-        <p>
-          Nome: {product.name} - Preço: R$ {product.price?.toFixed(2) ?? 'N/A'}
-        </p>
+      {product && ( 
+        <div>
+          <h1>Nome: {product.name} </h1>
+          <p>Preço: R$ {product.price.toFixed(2)}</p>
+          <p>Descrição: {product.description}</p>
+          {/* 6 - nested routes */}
+          <Link to={`/products/${product.id}/info`}>Mais informações</Link>
+        </div>
       )}
     </div>
   )
