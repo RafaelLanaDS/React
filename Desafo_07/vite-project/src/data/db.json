@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "tenis",
+            "price": 10.99
+        },
+        {
+            "id": 2,
+            "name": "chinelo",
+            "price": 19.99
+        },
+        {
+            "id": 3,
+            "name": "bola",
+            "price": 5.99
+        }
+    ]
+}
