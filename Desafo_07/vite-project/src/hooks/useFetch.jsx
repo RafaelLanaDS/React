@@ -46,20 +46,24 @@ export const useFetch = (url) => {
         const fetchData = async () => {
             // 6 - loading
             setLoading(true)
+            setError(null)
 
             try{
                 const res = await fetch(url)
 
-            const json = await res.json()
+                if(!res.ok) {
+                    throw new Error(`Erro ao carregar os dados: ${res.status}`)
+                }
 
-            setData(json)
+                const json = await res.json()
+
+                setData(json)
             } catch(error) {
                 console.log(error.message)
                 setError('Houve algum erro ao carregar os dados.')
+            } finally {
+                setLoading(false)
             }
-
-            // 6 - loading
-            setLoading(false)
         }
 
         fetchData()
@@ -82,7 +86,9 @@ export const useFetch = (url) => {
                 setCallFetch(json)
             }
         }
-        httpRequest()
+        if(method) {
+            httpRequest()
+        }
     }, [config, method, url, itemId]) //config = quando mudar, executa o useEffect
 
     return {data, httpConfig, loading, error}
