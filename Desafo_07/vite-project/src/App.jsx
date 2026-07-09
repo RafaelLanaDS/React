@@ -30,7 +30,7 @@ function App() {
           {/* 6 - nested routes */}
           <Route path="/products/:id/info" element={<Info />} />
           {/* 7 - rota não encontrada */}
-          <Route path="*" element={NotFound} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

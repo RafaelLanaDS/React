@@ -4,13 +4,13 @@ import {Link} from 'react-router-dom'
 
 const Products = () => {
   // 4 - rota dinâmica
-  const {id} = useParams()
+  const {id} = useParams() // pega o id da rota dinâmica use para pegar o id da rota dinâmica, que é passado como parâmetro na URL. O useParams retorna um objeto com os parâmetros da rota, e podemos desestruturar esse objeto para pegar o id diretamente.
 
   // 5 - carregamento de dados de um item individual
   const url = `http://localhost:3000/products/${id}`
 
   const {data: product, loading, error} = useFetch(url)
-
+  
   return (
     <div>
       <p>ID do Produto: {id}</p>
