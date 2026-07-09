@@ -4,13 +4,13 @@ import { useFetch } from "../hooks/useFetch";
 
 const Search = () => {
   const [searchParams] = useSearchParams();
-  const query = (searchParams.get("q") || "").trim().toLowerCase();
+  const query = (searchParams.get("q") || "").trim().toLowerCase(); // pega o valor do parâmetro de busca "q" da URL, remove espaços em branco e converte para minúsculas
 
   const url = "http://localhost:3000/products";
 
   const { data: items, loading, error } = useFetch(url);
 
-  const filteredItems = items
+  const filteredItems = items // filter os produtos com base na query de busca. Se a query estiver vazia, retorna um array vazio
     ? items.filter((product) => {
         const name = product.name?.toLowerCase() || "";
         return name.includes(query);
