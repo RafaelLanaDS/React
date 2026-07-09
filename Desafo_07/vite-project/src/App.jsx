@@ -5,6 +5,7 @@ import { BrowserRouter, Router, Route, Routes } from 'react-router-dom'
 
 // components
 import NavBar from './components/NavBar'
+import SearchForms from './components/SearchForms'
 
 // pages
 import Home from './pages/Home'
@@ -12,6 +13,8 @@ import Sobre from './pages/Sobre'
 import Products from './pages/Products'
 import Info from './pages/Info'
 import NotFound from './pages/NotFound'
+import Search from './pages/Search'
+
 
 function App() {
 
@@ -21,6 +24,7 @@ function App() {
       <h1>React Router</h1>
       <BrowserRouter>{/* Define onde a área do nosso app será renderizada */}
         <NavBar />
+        <SearchForms />
         {/* 2 - links com react router */}
         <Routes>{/* define as rotas do nosso app */}
           <Route path="/" element={<Home />} />{/* um elemento para a rota raiz */}
@@ -31,6 +35,8 @@ function App() {
           <Route path="/products/:id/info" element={<Info />} />
           {/* 7 - rota não encontrada */}
           <Route path="*" element={<NotFound />} />
+          {/* 8 - search route */}
+          <Route path="/search" element={<Search />} />
         </Routes>
       </BrowserRouter>
     </div>
