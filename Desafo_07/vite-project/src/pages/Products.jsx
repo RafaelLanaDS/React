@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom' // serev para pegar o id da rota
 import {useFetch} from '../hooks/useFetch'
 import {Link} from 'react-router-dom'
 

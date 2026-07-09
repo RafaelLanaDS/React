@@ -19,11 +19,11 @@ function App() {
     <div className="App">
 
       <h1>React Router</h1>
-      <BrowserRouter>
+      <BrowserRouter>{/* Define onde a área do nosso app será renderizada */}
         <NavBar />
         {/* 2 - links com react router */}
-        <Routes>
-          <Route path="/" element={<Home />} />
+        <Routes>{/* define as rotas do nosso app */}
+          <Route path="/" element={<Home />} />{/* um elemento para a rota raiz */}
           <Route path="/sobre" element={<Sobre />} />
           {/* 4 - rota dinâmica */}
           <Route path="/products/:id" element={<Products />} />
