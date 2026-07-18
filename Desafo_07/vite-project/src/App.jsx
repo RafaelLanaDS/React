@@ -24,7 +24,7 @@ function App() {
       <h1>React Router</h1>
       <BrowserRouter>{/* Define onde a área do nosso app será renderizada */}
         <NavBar />
-        <SearchForms />
+        <SearchForms /> 
         {/* 2 - links com react router */}
         <Routes>{/* define as rotas do nosso app */}
           <Route path="/" element={<Home />} />{/* um elemento para a rota raiz */}
@@ -44,3 +44,4 @@ function App() {
 }
 
 export default App
+// SearchForms serve para criar um formulário de busca que redireciona para a página de resultados de busca. Ele utiliza o hook useNavigate do react-router-dom para navegar para a rota de busca com o termo digitado pelo usuário.
