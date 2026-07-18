@@ -8,9 +8,14 @@ const Nav = () => {
         Home
       </NavLink>
       <NavLink
-        to="/sobre"
+        to="/Sobre"
         className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
         Sobre
+      </NavLink>
+      <NavLink
+        to="/products"
+        className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+        Products
       </NavLink>
     </nav>
   )

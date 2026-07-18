@@ -8,8 +8,9 @@ import {BrowserRouter, Router, Route, Routes} from 'react-router-dom'
 import Nav from './components/Nav'
 
 // pages
-import Sobre from './Pages/Sobre'
 import Home from './Pages/Home'
+import Sobre from './Pages/Sobre'
+import Products from './Pages/Products'
 
 function App() {
 
@@ -21,7 +22,8 @@ function App() {
         {/* 2 - links com react router */}
         <Routes>{/* define as rotas do nosso app */}
           <Route path="/" element={<Home/>}/>{/* um elemento para a rota raiz */}
-          <Route path="/sobre" element={<Sobre/>}/>
+          <Route path="/Sobre" element={<Sobre/>}/>
+          <Route path="/products" element={<Products/>}/>
         </Routes>
       </BrowserRouter>
     </div>
