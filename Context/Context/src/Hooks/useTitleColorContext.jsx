@@ -6,5 +6,5 @@ export const useTitleColorContext = () => {
     if (!context) {
         throw new Error("useTitleColorContext must be used within a TitleColorProvider");
     }
-    return context.state;
+    return { color: context.state.color, dispatch: context.dispatch };
 }

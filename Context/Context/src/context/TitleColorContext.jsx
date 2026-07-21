@@ -4,8 +4,12 @@ export const TitleColorContext = createContext();
 
 export const titleColorReducer = (state, action) => {
     switch (action.type) {
-        case "CHANGE_COLOR":
-            return { ...state, color: action.payload };
+        case "RED":
+            return { ...state, color: "red" };
+        case "BLUE":
+            return { ...state, color: "blue" };
+        case "GREEN":
+            return { ...state, color: "green" };
         default:
             return state;
     }

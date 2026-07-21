@@ -13,7 +13,13 @@ const Home = () => {
   const { counter, setCounter } = useCounterContext();
 
   // 5 - refatorando com hook
-  const { color } = useTitleColorContext();
+  const { color, dispatch } = useTitleColorContext();
+  
+
+  // 6 - alterando o estado do complexo
+  const changeTitleColor = (color) => {
+    dispatch({ type: color });
+  }
 
   return (
     <div>
@@ -21,6 +27,10 @@ const Home = () => {
       <p>Esta é a página Home.</p>
       <p>Contador: {counter}</p>
       <ChangeCounter/>
+      {/* 6 - alterando o estado do complexo */}
+      <button onClick={() => changeTitleColor("RED")}>Vermelho</button>
+      <button onClick={() => changeTitleColor("BLUE")}>Azul</button>
+      <button onClick={() => changeTitleColor("GREEN")}>Verde</button>
     </div>
   )
 }
