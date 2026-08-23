@@ -15,6 +15,7 @@ const HookUseState = () => {
 
     // 2 - useState e input
     const [age, setAge] = useState(18)
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -30,8 +31,7 @@ const HookUseState = () => {
             <p>Variavel: {userName}</p>
             <p>useState: {name}</p>
             <button onClick={changeName}>Mudar variaveis</button>
-            <hr />
-            
+            <br /> <br />
             {/* 2 - useState e input */}
             <h2>useState com input</h2>
             <form onSubmit={handleSubmit}>
