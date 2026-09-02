@@ -24,7 +24,7 @@ const HookUseRef = () => {
     return (
         <div>
         {/* 1 - useRef */}
-        <h2>HookUseRef</h2>
+        <h2>UseRef</h2>
         <p>O componente renderizou: {numberRef.current} vezes</p>
         <p>Counter 1: {counter}</p>
         <button onClick={() => setCounter(counter + 1)}>contador A</button>
