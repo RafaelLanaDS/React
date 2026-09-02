@@ -23,6 +23,7 @@ const Home = () => {
         <hr />
         <HookUseRef/>
         <hr />
+        <HookUseCallback />
         </div>
     )
 }
