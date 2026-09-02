@@ -1,4 +1,4 @@
-import {useState, useEffect, UseMemo} from "react";
+import {useState, useEffect, useMemo} from "react";
 
 const HookUseMemo = () => {
     const [number, setNumber] = useState(0)
@@ -25,6 +25,7 @@ const HookUseMemo = () => {
 }
 
 export default HookUseMemo
+
 
 /* ============================================================================
    RESUMO CONCEITUAL DO HOOK useMemo
