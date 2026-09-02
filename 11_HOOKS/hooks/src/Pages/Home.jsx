@@ -3,6 +3,7 @@ import HookUseState from '../components/HookUseState'
 import HoomUseReducer from '../components/HoomUseReducer'
 import HookUseEffect from '../components/HookUseEffect'
 import HookUseRef from '../components/HookUseRef'
+import HookUseCallback from '../components/HookUseCallback'
 
 // useContext
 import { useContext } from 'react'
