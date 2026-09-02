@@ -19,6 +19,7 @@ function App() {
             <Link to='/'>Home</Link>
             <Link to='/abaut'>Abaut</Link>
           </nav>
+          <hr />
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/abaut' element={<Abaut/>}/>
