@@ -14,17 +14,26 @@ function App() {
   return (
     <div className='App'>
       <HookUseContext>
-        <h1>React Hooks</h1>
         <BrowserRouter>
-          <nav>
-            <Link to='/'>Home</Link>
-            <Link to='/abaut'>Abaut</Link>
-          </nav>
-          <hr />
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/abaut' element={<Abaut/>}/>
-          </Routes>
+          <header className='app-header'>
+            <div className='app-brand'>
+              <span className='app-mark' aria-hidden='true'>R</span>
+              <div>
+                <p className='app-eyebrow'>Estudos práticos</p>
+                <h1>React Hooks</h1>
+              </div>
+            </div>
+            <nav className='app-nav' aria-label='Navegação principal'>
+              <Link className='app-nav-link' to='/'>Home</Link>
+              <Link className='app-nav-link' to='/abaut'>Sobre</Link>
+            </nav>
+          </header>
+          <main className='app-main'>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/abaut' element={<Abaut/>}/>
+            </Routes>
+          </main>
         </BrowserRouter>
       </HookUseContext>
     </div>

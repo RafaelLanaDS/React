@@ -273,6 +273,15 @@ body {
   padding: 18px 28px 22px;
 }
 
+.hook-notes {
+  font: inherit;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
 .explanation-content p {
   margin: 0 0 10px;
 }
