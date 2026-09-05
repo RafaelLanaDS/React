@@ -1,6 +1,7 @@
 import './App.css'
+import './Hooks.css'
 
-import {BrowserRouter, Router, Routes, Route, Link} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 
 import {HookUseContext} from './components/HookUseContext'
 

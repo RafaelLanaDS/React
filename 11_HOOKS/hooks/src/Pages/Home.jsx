@@ -1,40 +1,8 @@
-import React from 'react'
-import HookUseState from '../components/HookUseState'
-import HoomUseReducer from '../components/HoomUseReducer'
-import HookUseEffect from '../components/HookUseEffect'
-import HookUseRef from '../components/HookUseRef'
-import HookUseCallback from '../components/HookUseCallback'
-import HookUseMemo from '../components/HookUseMemo'
-import HookUseLayoutEffect from '../components/HookUseLayoutEffect'
-import HookCustom from '../components/HookCustom'
-
-// useContext
-import { useContext } from 'react'
-import { SomeContext } from '../components/HookUseContext'
-import HookUseImperativeHandle from '../components/HookUseImperativeHandle'
+import HooksNav from '../components/HooksNav'
 
 const Home = () => {
-
-    const contextValue = useContext(SomeContext) // useContext é um hook que permite acessar o valor do contexto criado no componente HookUseContext
-
-    return (
-        <div>
-        <h2>Home</h2>
-        <HookUseState/>
-        <HoomUseReducer/>
-        <HookUseEffect/>
-        <h2>Use Context</h2>
-        <p>O valor do contexto é: {contextValue}</p>
-        <hr />
-        <HookUseRef/>
-        <hr />
-        <HookUseCallback />
-        <HookUseMemo />
-        <HookUseLayoutEffect />
-        <HookUseImperativeHandle />
-        <HookCustom />
-        </div>
-    )
+        return <HooksNav />
 }
 
 export default Home
+
