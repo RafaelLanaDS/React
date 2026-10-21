@@ -39,4 +39,40 @@ logName()
  
 console.log(name)
 
-name = "teste"
+
+
+// 2- arrow function
+
+const sum = function sum(a , b){
+    return a + b
+}
+console.log(sum(5,5))
+
+const arrowSum = (a, b) => {
+    return a + b
+}
+console.log(arrowSum(5, 5))
+
+
+const greeting = (name) => {
+    if (name){
+        return 'Ola' + name + "!"
+    } else {
+        return 'Ola'
+    }
+}
+
+
+console.log(greeting("Rafael"))
+console.log(greeting())
+
+const testeArrow = () => console.log('testou')
+
+testeArrow()
+
+const user = {
+    name: "Rafa"
+    sayUserName () {
+        
+    }
+}
