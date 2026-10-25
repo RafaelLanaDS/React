@@ -169,3 +169,23 @@ const otherInfos = {Km: 10000, preice: 20000}
 
 const car = {...carName, ...carBrand, ...otherInfos, wheels: 4}
 console.log(car)
+
+
+// classes
+
+class Products {
+    constructor(name, preice) {
+        this.name = name
+        this.price = price
+    }
+
+    productWithDiscount(discount) {
+        return this.price * ((100 - discount) / 100)
+    }
+}
+
+const shirt =new Products("Camisa gola v" , 20)
+
+console.log(shirt.name)
+console.log(shirt.productWithDiscount(10))
+console.log(shirt.productWithDiscount(50))
