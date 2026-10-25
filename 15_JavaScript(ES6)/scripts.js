@@ -71,8 +71,44 @@ const testeArrow = () => console.log('testou')
 testeArrow()
 
 const user = {
-    name: "Rafa"
+    name: "Rafa",
     sayUserName () {
-        
-    }
+        var self = this
+        setTimeout(function() {
+            console.log(this)
+            console.log("Username:" + this.name)
+        }, 500)
+    },
+    sayUserNameArrow() {
+        setTimeout(() => {
+            console.log(this)
+            console.log('Username:' + this.name)
+        }, 700)
+    },
 }
+
+user.sayUserName()
+user.sayUserNameArrow()
+
+// filter
+const arr = [1, 2, 3, 4 , 5]
+
+const highNumbers = arr.filter((n) =>  {
+    if(n  >= 3) {
+        return n
+    }
+})
+
+console.log(highNumbers)
+
+const users =[
+    {name: "Rafa", availabre: true},
+    {name: "Rafael", availabre: true},
+    {name: "Rafaela", availabre: true},
+    {name: "Rafinha", availabre: false},
+    {name: "fael", availabre: false} 
+]
+
+const availableUsers = users.filter((user) => user.availabre) // avalia os que são true
+const notAvailableUsers = users.filter((user) => !user.availabre) // avalia os que são false
+console.log(availableUsers)
