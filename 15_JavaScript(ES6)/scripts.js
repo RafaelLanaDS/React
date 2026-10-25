@@ -153,3 +153,19 @@ const {name: productName, price, category} = productsDetails
 console.log(productName)
 console.log(price)
 console.log(category)
+
+// spread operator
+const a1 = [1, 2, 3]
+const a2 = [4, 5, 6]
+const a3 = [...a1, ...a2] // spred operator ... cria um array unico
+console.log(a3)
+
+const a4 = [0, ...a1, 4]
+console.log(a4)
+
+const carName = {Name: 'gol'}
+const carBrand = {marca: "VW"}
+const otherInfos = {Km: 10000, preice: 20000}
+
+const car = {...carName, ...carBrand, ...otherInfos, wheels: 4}
+console.log(car)
