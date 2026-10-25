@@ -129,3 +129,8 @@ products.map((product) => {
 )
 
 console.log(products)
+
+// template literals
+const names = "Rafael"
+const greetingg = `Olá, ${names}!`
+console.log(greetingg)
