@@ -132,5 +132,24 @@ console.log(products)
 
 // template literals
 const names = "Rafael"
-const greetingg = `Olá, ${names}!`
+const idade = 24
+const greetingg = `Olá, ${names}! Você tem ${idade} anos.`
 console.log(greetingg)
+
+//destructuring
+const fruits = ["mela", "banena", "laranja"]
+const [f1, f2, f3] = fruits
+console.log(f1)
+console.log(f2)
+console.log(f3)
+
+const productsDetails = {
+    name: "camisa",
+    price: 10.99,
+    category: "roupas"
+}
+
+const {name: productName, price, category} = productsDetails
+console.log(productName)
+console.log(price)
+console.log(category)
