@@ -189,3 +189,27 @@ const shirt =new Products("Camisa gola v" , 20)
 console.log(shirt.name)
 console.log(shirt.productWithDiscount(10))
 console.log(shirt.productWithDiscount(50))
+
+
+// herença 
+
+class productWithAttributes extends products {
+    constructor(name, price, colors) {
+        super(name, price)
+        this.colors = colors
+    }
+
+    showColors() {
+        console.log("as cores são: ")
+        this.colors.forEach((color) => {
+            console.log(color)
+        })
+    }
+}
+
+const hat = new productWithAttributes("chapeu", 29.99, ["preto", "azul", "verde"])
+
+console.log(hat.name)
+
+console.log(hat.productWithDiscount(30))
+hat.showColors()
